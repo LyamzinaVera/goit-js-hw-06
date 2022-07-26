@@ -1,28 +1,17 @@
-const inputEmail = document.querySelector('[name=email]')
+const form = document.querySelector(".login-form");
 
-const inputPassword = document.querySelector('[name=password]');
+form.addEventListener("submit", handleSubmit);
 
-
-function checkFields() {
-    const fields = Object.keys(this.refs);
-    for (const field of fields) {
-        if (this.refs[field].value === '')
-            return false;
-    }
-    return true;
-}
-
-
-if (validation) {
-    formValidator.generateResultObject();
-
-} else {
-    alert ("You have to fill all fields")
-}
-
-function generateResultObject() {
-    const elements = {};
-    elements[this.refs.inputEmail.name] = this.refs.inputEmail.value;
-    elements[this.refs.inputPassword.name] = this.refs.inputPassword.value;
-    console.log(elements);
+function handleSubmit(event) {
+  event.preventDefault();
+  const {
+    elements: { email, password }
+  } = event.currentTarget;
+    
+  if (email.value === "" || password.value === "") {
+    return alert("Please fill in all the fields!");
+  }
+    
+  console.log(`Email: ${email.value}, Password: ${password.value}`);
+  event.currentTarget.reset();
 }
