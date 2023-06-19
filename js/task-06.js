@@ -1,6 +1,6 @@
 const nameInput = document.querySelector('#validation-input');
 
-nameInput.addEventListener('blur', function () {
+function nameInputChange() {
     const inputValue = nameInput.value.trim();
 
     const requiredLength = parseInt(nameInput.dataset.length);
@@ -13,4 +13,6 @@ nameInput.addEventListener('blur', function () {
         nameInput.classList.remove('valid');
         nameInput.classList.add('invalid')
     }
-})
+}
+
+nameInput.addEventListener('blur', nameInputChange)

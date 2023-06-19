@@ -1,6 +1,6 @@
 const form = document.querySelector('.login-form');
 
-form.addEventListener('submit', function (event) {
+function formLog (event) {
    
     event.preventDefault();
     
@@ -18,5 +18,6 @@ form.addEventListener('submit', function (event) {
     console.log(formData);
 
     form.reset();
-});
+};
 
+form.addEventListener('submit', formLog)

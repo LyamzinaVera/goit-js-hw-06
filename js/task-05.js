@@ -1,7 +1,7 @@
 const nameInput = document.querySelector('input#name-input');
 const nameOutput = document.querySelector('span#name-output');
 
-nameInput.addEventListener('input', function () {
+function nameInputChange () {
     const inputValue = nameInput.value.trim();
 
     if (inputValue === '') {
@@ -9,4 +9,6 @@ nameInput.addEventListener('input', function () {
     } else {
         nameOutput.textContent = inputValue;
     }
-})
+};
+
+nameInput.addEventListener('input', nameInputChange)
